@@ -2,6 +2,7 @@ import React from "react";
 
 
 const Card = ({resData}) => {
+  // console.log(resData);
   
   const {name,cuisines,avgRating,cloudinaryImageId} = resData.info;
 

@@ -3,12 +3,14 @@ import Card, { withOpenLabel } from "./Card";
 import { Link } from "react-router-dom";
 import useOnlineStatus from '../utils/useOnlineStatus';
 import Contact from "./Contact";
+import Banner from "./Banner";
 
 
 
 const Body = () => {
   const [list, setList] = useState([]);
   const [templist, setTempList] = useState([]);
+  const [banner, setBanner] = useState([]);
   const [search,setSearch] = useState("");
 
   const CardOpen = withOpenLabel(Card);
@@ -27,31 +29,35 @@ const Body = () => {
     );
 
     const json = await data.json();
-    // console.log(json);
+    console.log(json);
     // console.log(
     //   json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     // );
     setList(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    // console.log(list);
     setTempList( json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     // console.log(templist);
+    setBanner(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
   };
-
+ 
   const filterOut = () => {
-    const temp = list.filter((eleVal) => {
+      const temp = list.filter((eleVal) => {
       return eleVal.info.avgRating > 4;
     });
-   
+   console.log(temp);
+   setTempList(temp);
   };
 
   const searchItem = (event) => {
+    // console.log(event.target.value);
       setSearch(event.target.value);
   }
   
   const searchItems =()=>{
       const filterItem = list.filter((eleVal) => {
-      return eleVal.info.name.toLowerCase().includes(search.toLowerCase());
+      return eleVal.info.toLowerCase().includes(search.toLowerCase());
     })
     setTempList(filterItem);
     // setList(filterItem);
@@ -75,7 +81,7 @@ const Body = () => {
 // if(templist===null) return <Contact />
  
   return (
-    <>
+    <div className="w-11/12 m-auto">
       <div className="container">
         <input type="text" placeholder="Search Your Food" onChange={searchItem}/>
         <button type="submit" className="searchButton" onClick={searchItems}>
@@ -87,6 +93,10 @@ const Body = () => {
         </button>
       </div>
 
+      
+      
+      <Banner data={banner} />
+  
       <div className="cardContaineer">
         {templist && templist.map((ele) => {
           return <Link to={"/restaurant/"+ele.info.id} key={ele.info.id}>
@@ -97,7 +107,7 @@ const Body = () => {
           </Link>;
         })}
       </div> 
-    </>
+    </div>
   );
 };
 

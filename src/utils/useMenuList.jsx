@@ -17,7 +17,7 @@ const useMenuList = (resid) => {
     );
 
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     setResInfo(json?.data);
     // setArrayOfferCard(
     //   json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.offers
