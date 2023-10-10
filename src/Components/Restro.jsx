@@ -8,10 +8,10 @@ import appStore from "../utils/appStore";
 const Restro = () => {
   return (
     <Provider store={appStore}>
-      <>
+      <div>
         <Header />
         <Outlet />
-      </>
+      </div>
     </Provider>
   );
 };

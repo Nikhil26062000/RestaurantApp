@@ -11,7 +11,7 @@ export default function Banner({data}) {
     infinite: false,
     speed: 500,
     arrows: false,
-    slidesToShow: 3,
+    slidesToShow: 10,
     slidesToScroll: 1
   };
   return (
@@ -19,8 +19,8 @@ export default function Banner({data}) {
     <Slider {...settings}>
     { data.map((ele)=> {
        return(
-        <div key={ele.id} className="pt-6 px-2 outline-none">
-            <img  src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,c_fill/" + ele.imageId} />
+        <div key={ele.id} className="pt-6 px-2 outline-none rounded-full">
+            <img className="w-28" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,c_fill/" + ele.imageId} />
         </div>
        ) 
     })}

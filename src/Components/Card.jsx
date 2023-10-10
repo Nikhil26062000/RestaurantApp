@@ -1,10 +1,15 @@
 import React from "react";
 
 
+
 const Card = ({resData}) => {
   // console.log(resData);
+
+ 
   
-  const {name,cuisines,avgRating,cloudinaryImageId} = resData.info;
+  const {name,cuisines,avgRating,cloudinaryImageId,costForTwo} = resData.info;
+
+  // cuisines = cuisines.slice(0,3);
 
 
   
@@ -15,10 +20,22 @@ const Card = ({resData}) => {
         alt=""
       />
 
-      <h4 className="name">{name}</h4>
-      <h5>{cuisines.join(", ")} </h5>
-      <h5 className="rating">{"⭐"+avgRating}</h5>
-      <button className="orderButton">Order Now</button>
+      <h4 className="name">{name.length < 15 ?name : name.slice(0,15) + "..."}</h4>
+      <h5 className="cuisines">{cuisines.slice(0,4).join(", ")} </h5>
+      <h6 className={resData.info.veg ? "text-green-600" : "text-red-600"}> {resData.info.veg ? "💚 VEG" : "🔴 Non Veg"}</h6>
+      <h4>⭐⭐⭐⭐ {avgRating}</h4>
+      
+     
+      <div className="priceBox">
+          
+          
+          <h4 className="price">{costForTwo} </h4>
+          <button className="orderButton">Order Now</button>
+          
+      </div>
+
+      
+      
       
      
     </div>

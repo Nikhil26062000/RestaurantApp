@@ -8,6 +8,8 @@ import Error from "./src/Components/Error";
 import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 import Cart from "./src/Components/Cart";
 import DetailedCard from "./src/Components/DetailedCard";
+import Search from "./src/Components/Search";
+import Offer from "./src/Components/Offer";
 // import Grocery from "./src/Components/Grocery";
 
 
@@ -73,23 +75,32 @@ const appRouter = createBrowserRouter([
         element:<Body />,
        
       },
-      { path:"/about",
-      element: <Suspense fallback={<h1>Loading About Page 😄 Keep Waiting...</h1>}><About /></Suspense>,//this Suspense component will be used when we want lazy loading;
-    },
-    {
-      path:"/contact",
-      element: <Contact />,
-    },
-    {
-      path:"/grocery",
-      element: <Suspense fallback={<h1>Loading Grocery Page 😄 Keep Waiting...</h1>}><Grocery /></Suspense>,
-    },
+    //   { path:"/about",
+    //   element: <Suspense fallback={<h1>Loading About Page 😄 Keep Waiting...</h1>}><About /></Suspense>,//this Suspense component will be used when we want lazy loading;
+    // },
+    // {
+    //   path:"/contact",
+    //   element: <Contact />,
+    // },
+    // {
+    //   path:"/grocery",
+    //   element: <Suspense fallback={<h1>Loading Grocery Page 😄 Keep Waiting...</h1>}><Grocery /></Suspense>,
+    // },
     {
       path:"/restaurant/:resid",
       element: <DetailedCard />
     },{
       path:"/cart",
       element:<Cart />
+    },{
+      path:"/search",
+      element:<Search />
+    },{
+      path:"/contact",
+      element:<Contact/>
+    },{
+      path:"/offer",
+      element:<Offer/>
     }
     ],
     errorElement:<Error />,
