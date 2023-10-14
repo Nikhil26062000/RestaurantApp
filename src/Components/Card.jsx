@@ -49,14 +49,20 @@ export default Card;
 // Below this i m gonna create  a higher order component named withOpenedLabel...
 
 export const withOpenLabel = () =>{
-  return ({resData})=>{
-    return (
-      <div className="mt-10">
+  return ({resData,lableName})=>{
+
+   return lableName === "NO OFFERS AVAILABLE" ? 
+      <div className="mt-10 opacity-50">
         <label className="absolute">
-          <h4 className="w-20 rounded-lg px-1 py-2 text-center mt-2 relative bottom-8 left-3 bg-black text-white shadow-sm shadow-slate-700">OPENED</h4>
+          <h4 className="w-full rounded-lg px-1 py-2 text-center mt-2 relative bottom-8 left-3 bg-green-800 text-white shadow-sm shadow-slate-700">{lableName}</h4>
+        </label> 
+        <Card resData={resData}/>
+      </div> :  <div className="mt-10">
+        <label className="absolute">
+          <h4 className="w-full rounded-lg px-1 py-2 text-center mt-2 relative bottom-8 left-3 bg-green-800 text-white shadow-lg shadow-slate-700 ">{lableName}</h4>
         </label> 
         <Card resData={resData}/>
       </div>
-    )
+    
   }  
 }

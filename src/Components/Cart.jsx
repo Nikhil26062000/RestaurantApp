@@ -1,66 +1,104 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Button from "@mui/material/Button";
+// import {clearCart} from '../utils/cartSlice';
+import {clearCart} from '../utils/cartSlice'
+
+import CartItemList from "./CartItemList";
 
 const Cart = () => {
   const item = useSelector((store) => store.cart.items);
   console.log(item);
+  const totalPrice = useSelector((store) => store.cart.sum);
+  // const {quantity} = item?.card;
+  console.log(item);
 
-  let sum = 0;
+  const dispatch = useDispatch();
 
-  item.map((ele) => {
-    // sum = sum + ele?.card?.info?.price ? ele?.card?.info?.price : ele?.card?.info?.defaultPrice ;
-    if (ele.card.info.price) {
-      sum = sum + ele?.card?.info?.price;
-    } else {
-      sum = sum + ele?.card?.info?.defaultPrice;
-    }
-  });
 
-  
+const clearWholeCart = () => {
+    dispatch(clearCart())
+}
+
+
+  // let sum = 0;
+
+
+ 
+
+  // item.map((ele) => {
+  //   // sum = sum + ele?.card?.info?.price ? ele?.card?.info?.price : ele?.card?.info?.defaultPrice ;
+  //   if (ele.card.info.price) {
+  //     sum = sum + ele?.card?.info?.price;
+  //   } else {
+  //     sum = sum + ele?.card?.info?.defaultPrice;
+  //   }
+  // });
+
   return (
-    <div>
-      <div className="w-3/4 ml-48  bg-slate-200 flex justify-between rounded-lg shadow-sm ">
-        <div className="ml-16 mt-5 mb-5">
-          <h3 className="p-2 capitalize">Total Items : {item.length}</h3>
-          <h3 className="p-2 text-green-800 capitalize">
-            total Price : 💰 {sum / 100}
-          </h3>
-        </div>
-
-        <div>
-          <button className="mr-16  mt-6 mb-5 p-4 place-items-center border border-black rounded-md  bg-green-600 text-white hover:bg-green-800">
-            Place Order
-          </button>
-        </div>
-      </div>
-
-      <hr className="m-2 p-1  bg-black" />
-
-      <div>
-        <h2 className="text-center capitalize text-lg">Your Items</h2>
-        {item.map((ele, index) => {
-          return (
-            <div
-              key={index}
-              id={index}
-              className="w-3/5 bg-slate-200 border shadow-sm border-black rounded-lg ml-72 flex justify-between mt-2"
-            >
-              <div className="m-4">
-                <h2>🥘 {ele?.card?.info?.name}</h2>
-                <h4 className="text-green-800 px-3 pt-1">
-                  {" "}
-                  Rs.{" "}
-                  {ele?.card?.info?.price / 100 ||
-                    ele?.card?.info?.defaultPrice / 100}
-                </h4>
-              </div>
-
-              <button className="m-6 place-items-center border border-black rounded-md px-4 bg-red-400 text-white hover: shadow-2xl hover:bg-red-500">
-                Cancel
-              </button>
+    <div className="fullpage">
+      <div className="CartPageDesign">
+        <div className="leftSide">
+          <div className="leftsidetitle">
+            <div className="leftsidetitlename">
+              Cart ({item.length}Products)
             </div>
-          );
-        })}
+            <div className="clearCartButton">
+              <Button className="clear" variant="contained" onClick={clearWholeCart}>
+                Clear Cart
+              </Button>
+            </div>
+          </div>
+
+          <div className="orderListHeader">
+            <h2>PRODUCT</h2>
+            <h2>NAME</h2>
+            <h2>QUANTITY</h2>
+            <h2>REMOVE</h2>
+          </div>
+
+          <hr className="bg-black h-1" />
+
+          <div>
+            {item.map((ele, index) => {
+              return (
+                <CartItemList
+                  key={index}
+                  id={index}
+            
+                  ele={ele}
+                  // quantity={quantity}
+              
+                  
+                 
+                  
+
+                />
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="rightSide">
+          <h3 className="promotitle">PROMO CODE</h3>
+          <input type="text" className="promocode" placeholder="Enter Code" />
+          <Button variant="contained">APPLY</Button>
+
+          <hr className="line" />
+
+          <div className="paymentDetail">
+            <h4 className="sub">Subtotal</h4>
+            <h6 className="discount">Discount </h6>
+            <h3 className="totalPrice">Total</h3>
+            <h4 className="var1">{totalPrice/100}</h4>
+            <h5 className="var2">Rs.150</h5>
+            <h3 className="var3">{totalPrice/100}</h3>
+          </div>
+
+          <Button className="placeOrder" variant="contained">
+            PLACE ORDER
+          </Button>
+        </div>
       </div>
     </div>
   );

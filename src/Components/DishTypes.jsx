@@ -17,7 +17,7 @@ export default function Banner({data}) {
   return (
     <div>
     <Slider {...settings}>
-    { data.map((ele)=> {
+    {data && data.map((ele)=> {
        return(
         <div key={ele.id} className="pt-6 px-2 outline-none rounded-full">
             <img className="w-28" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,c_fill/" + ele.imageId} />

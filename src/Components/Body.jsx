@@ -36,6 +36,7 @@ const Body = () => {
      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.5940947&lng=85.1375645&page_type=DESKTOP_WEB_LISTING"
     );
 
+
     const json = await data.json();
     // console.log(json);
     // console.log(
@@ -129,7 +130,7 @@ const Body = () => {
   }
 
   
- if(templist.length==0){
+ if(templist && templist.length==0){
    return <Shimmer />
  }
  
@@ -158,10 +159,10 @@ const Body = () => {
 
       <div className="category-buttons">
         <Button className="btncat" variant="outlined" onClick={showAllItems}>ALL</Button>
-        <Button className="btncat"  variant="outlined" onClick={showPureVeg}>PURE VEG</Button>
-        <Button className="btncat"  variant="outlined" onClick={showPureNonVeg}>Non-Veg</Button>
-        <Button className="btncat"  variant="outlined" onClick={rangeFirst}>Rs.300 - Rs.600</Button>
-        <Button className="btncat" variant="outlined" onClick={lessThanSix}>Less than 600</Button>
+        <Button className="btncat"  variant="outlined" onClick={showPureVeg}>PURE VEG 💚</Button>
+        <Button className="btncat"  variant="outlined" onClick={showPureNonVeg}>Non-Veg 🔴</Button>
+        <Button className="btncat"  variant="outlined" onClick={rangeFirst}>💰 Rs.300 - Rs.600</Button>
+        <Button className="btncat" variant="outlined" onClick={lessThanSix}>💰 Less than 600</Button>
       </div>
   
       <div className="cardContaineer">

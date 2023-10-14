@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Logo2 from "../Images/Logo2.png";
-import icon from "../Images/icon.png";
+// import icon from "../Images/icon.png";
 import { Link } from "react-router-dom";
 import "../../index.css";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { useSelector } from "react-redux";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
-import HelpIcon from '@mui/icons-material/Help';
+// import HelpIcon from '@mui/icons-material/Help';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Button from '@mui/material/Button';
 import HomeIcon from '@mui/icons-material/Home';
@@ -47,7 +47,7 @@ const Header = () => {
           <Link className="links" to="/"><HomeIcon />Home</Link>
           <Link className="links" to="/search"><SearchOutlinedIcon />Search</Link>
           <Link className="links" to="/offer"> <LocalOfferIcon /> Offers</Link>
-          <Link className="links" to="/contact"> <HelpIcon /> Help</Link>
+          {/* <Link className="links" to="/contact"> <HelpIcon /> Help</Link> */}
           {/* <Link to="/grocery">Grocery</Link> */}
           
        

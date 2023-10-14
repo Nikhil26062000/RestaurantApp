@@ -370,6 +370,249 @@ h5 {
   margin-left: 1.5%;
 }
 
+.offers{
+  margin-left: 5%;
+  margin-right: 5%;
+  
+}
+
+.fullpage{
+  width: 100%;
+  height: fit-content;
+  /* background-color:#e9ecee; */
+  /* position:absolute; */
+}
+
+
+.CartPageDesign{
+  position: relative;
+  margin-left:5%;
+  margin-right: 5%;
+  /* width: 90%; */
+  /* height: 90%; */
+  /* background-color: rgb(241, 241, 196); */
+  display: flex;
+  justify-content: center !important;
+  gap: 2%;
+  margin-top: 2%;
+  /* background-color: #e9ecee; */
+  /* height: 100% !important; */
+  
+}
+
+.CartItemDtails{
+  display: flex !important;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.fetchOrderIncDec{
+  /* display: flex;
+    place-items: center; */
+    grid-column: 3/4;
+
+
+}
+.dlfetchOrderDltbutton{
+  margin-top: 20px;
+}
+
+.leftSide{
+  width:80%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  /* box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px; */
+  background: rgb(255,253,235);
+  background: linear-gradient(0deg, rgba(255,253,235,1) 14%, rgba(248,199,70,1) 97%);
+/* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 12px );
+-webkit-backdrop-filter: blur( 12px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+background: rgba( 231, 181, 18, 0.6 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 0px );
+-webkit-backdrop-filter: blur( 0px );
+border-radius: 10px;
+}
+ /* border:1px solid #f8c746; */
+ /* box-shadow: 1px 2px 10px black;
+ border-radius: 10px; */
+  
+
+
+
+.leftsidetitle{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.leftsidetitlename{
+  width: 25%;
+  margin-left: 2%;
+  font-size: 20px;
+    font-weight: 700;
+
+}
+
+.clearCartButton{
+  width: 20%;
+  padding-left: 5%;
+  
+}
+
+.clear{
+  background-color: red !important;
+}
+
+.orderListHeader{
+  /* margin-left: 5%;
+  margin-right:5%; */
+  display: grid;
+  grid-template-columns: .5fr 1fr 1fr .5fr;
+  place-items: center;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  font-weight: 500;
+}
+
+.fetchOrderList{
+  display:grid;
+  grid-template-columns: .5fr 1fr 1fr .5fr;
+  grid-template-rows: 90px;
+  place-items: center;
+  margin-bottom: 25px;
+  margin-top: 25px;
+    /* border-bottom: 1px solid; */
+    padding-bottom: 1%;
+    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+}
+
+.fetchOrderSec1{
+  grid-column: 1/2;
+}
+
+.fetchOrderSec2{
+  grid-column: 2/3;
+}
+
+
+
+.rightSide{
+  width: 30%;
+  /* border: 1px solid #f8c746; */
+  height: 50vh;
+  background-color: #fff;
+    border-radius: 10px;
+   
+    padding: 20px;
+    /* box-shadow: 0 4px 8px -2px #091e4240, 0 0 0 1px #091e4214; */
+    background: rgb(255,253,235);
+background: linear-gradient(0deg, rgba(255,253,235,1) 14%, rgba(248,199,70,1) 97%);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 12px );
+-webkit-backdrop-filter: blur( 12px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.promotitle{
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+
+.line{
+  height: 2px;
+    color: black;
+    background: black;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.rightSide input{
+  margin: 15px;
+}
+.paymentDetail{
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr ;
+  place-items: start;
+  margin-top: 20px;
+  padding: 15px;
+}
+
+.sub{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding-bottom: 2px;
+  font-size:14px;
+}
+.discount{
+  grid-column: 1/2;
+  grid-row: 2/3;
+  padding-bottom: 2px;
+  font-size:14px;
+  color: green;
+  font-weight: 600;
+  
+}
+.totalPrice{
+  grid-column:1/2;
+  grid-row: 3/4;
+  padding-bottom: 2px;
+  font-size:18px;
+ 
+}
+
+.var1{
+  grid-column:3/4;
+  grid-row:1/2;
+  padding-bottom: 2px;
+  font-size:14px;
+}
+
+.var2{
+  grid-column:3/4;
+  grid-row:2/3;
+  padding-bottom: 2px;
+  font-size:14px;
+  color: green;
+  font-weight: 600;
+}
+
+.var3{
+  grid-column:3/4;
+  grid-row:3/4;
+  padding-bottom: 2px;
+  font-size:18px;
+  
+}
+.placeOrder{
+  background: green !important;
+  /* margin: 25px auto; */
+  margin-left:5% !important;
+  margin-top: 7%;
+}
+.btnDelete{
+  margin-right: 3%;
+  color:red !important;
+  border: 1px solid red !important;
+  margin-bottom: 15px !important;
+}
+
+.addBtn{
+  color:green !important;
+
+}
+
+.dltBtn{
+  color: red !important;
+}
+
+
+
 
 /* Shimmer Ui ------------------------------------------------------------------------------------------  */
 

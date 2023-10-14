@@ -45,55 +45,55 @@ const Shimmer = () => {
           <div className="shimmer"></div>
         </div>
       </div>
-      <div class="container flex flex-wrap gap-4 my-16 relative">
+      <div className="container flex flex-wrap gap-4 my-16 relative">
         <div className="shimmer"></div>
         <div className="box">
           <div className="img"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
         </div>
         <div className="box">
           <div className="img"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
         </div>
         <div className="box">
           <div className="img"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
         </div>
         <div className="box">
           <div className="img"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
         </div>
         <div className="box">
           <div className="img"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
         </div>
         <div className="box">
           <div className="img"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
         </div>
         <div className="box">
           <div className="img"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
         </div>
         <div className="box">
           <div className="img"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
         </div>
       </div>
     </div>
