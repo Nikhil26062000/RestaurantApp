@@ -14,6 +14,7 @@ const DetailedCard = () => {
 
   const showChanges = (id) => {
     setShowIndex(id);
+    
   };
 
   //Getting data from custom hook useMenuList in which data has been fetched by real API

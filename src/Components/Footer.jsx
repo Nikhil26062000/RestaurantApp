@@ -40,8 +40,8 @@ const Footer = () => {
               <NavLink className="text-yellow-600" link="/#" label="About" />
               <NavLink className="text-yellow-600" link="/#" label="Careers" />
               <NavLink className="text-yellow-600" link="/#" label="Team" />
-              <NavLink className="text-yellow-600" link="/#" label="GoodFood One" />
-              <NavLink className="text-yellow-600" link="/#" label="GoodFood Instamart" />
+              <NavLink className="text-yellow-600" link="/#" label="Food One" />
+              <NavLink className="text-yellow-600" link="/#" label="Food Instamart" />
             </LinkGroup>
             <LinkGroup header="Legal">
               <NavLink className="text-yellow-600" link="/#" label="Terms & Conditions" />

@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import Button from "@mui/material/Button";
 // import {clearCart} from '../utils/cartSlice';
 import {clearCart} from '../utils/cartSlice'
+import {Link} from 'react-router-dom'
+
 
 import CartItemList from "./CartItemList";
+import EmptyCart from "./EmptyCart";
 
 const Cart = () => {
   const item = useSelector((store) => store.cart.items);
@@ -34,6 +37,18 @@ const clearWholeCart = () => {
   //     sum = sum + ele?.card?.info?.defaultPrice;
   //   }
   // });
+
+  if(item.length===0){
+    return(
+      <EmptyCart 
+      imgUrl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0"
+       text1="Your cart is empty"
+       text2="You can go to home page to view more restaurants"
+       label="SEE RESTAURANTS NEAR YOU"
+   />
+    )
+  
+  }
 
   return (
     <div className="fullpage">
@@ -91,13 +106,19 @@ const clearWholeCart = () => {
             <h6 className="discount">Discount </h6>
             <h3 className="totalPrice">Total</h3>
             <h4 className="var1">Rs.{totalPrice/100}</h4>
-            <h5 className="var2">0</h5>
-            <h3 className="var3">Rs.{totalPrice/100}</h3>
+            <h5 className="var2">{totalPrice/100 > 1000?"Rs.250 OFF":"ABOVE RS.1000"}</h5>
+            <h3 className="var3">Rs.{totalPrice/100>1000?totalPrice/100-250:totalPrice/100}</h3>
           </div>
-
-          <Button className="placeOrder" variant="contained">
+            <Link to='/placed'>
+            <Button className="placeOrder" variant="contained">
             PLACE ORDER
           </Button>
+
+            </Link>
+          
+
+          {/* <p className="font-semibold text-sm">WE ACCEPT:</p>
+            <img src={PaymentLogo} alt="payment" /> */}
         </div>
       </div>
     </div>

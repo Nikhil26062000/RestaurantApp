@@ -10,6 +10,7 @@ import Cart from "./src/Components/Cart";
 import DetailedCard from "./src/Components/DetailedCard";
 import Search from "./src/Components/Search";
 import Offer from "./src/Components/Offer";
+import OrderPlaced from "./src/Components/OrderPlaced";
 // import Grocery from "./src/Components/Grocery";
 
 
@@ -95,9 +96,12 @@ const appRouter = createBrowserRouter([
     },{
       path:"/search",
       element:<Search />
-    },,{
+    },{
       path:"/offer",
       element:<Offer/>
+    },{
+      path:"/placed",
+      element:<OrderPlaced/>
     }
     ],
     errorElement:<Error />,
