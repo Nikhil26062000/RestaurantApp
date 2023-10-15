@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import DishTypes from './DishTypes';
 import RoomIcon from '@mui/icons-material/Room';
 import Shimmer from './Shimmer';
+import Footer from "./Footer";
 
 
 
@@ -143,9 +144,7 @@ const Body = () => {
           Search
         </Button>
 
-        <Button variant="contained" type="submit" className="searchButton2" onClick={filterOut}>
-          TOP RATED RESTORANT
-        </Button>
+        
       </div>
 
       
@@ -159,6 +158,9 @@ const Body = () => {
 
       <div className="category-buttons">
         <Button className="btncat" variant="outlined" onClick={showAllItems}>ALL</Button>
+        <Button className="btncat" variant="outlined" type="submit"  onClick={filterOut}>
+          Rating 4+ ⭐
+        </Button>
         <Button className="btncat"  variant="outlined" onClick={showPureVeg}>PURE VEG 💚</Button>
         <Button className="btncat"  variant="outlined" onClick={showPureNonVeg}>Non-Veg 🔴</Button>
         <Button className="btncat"  variant="outlined" onClick={rangeFirst}>💰 Rs.300 - Rs.600</Button>
@@ -179,7 +181,7 @@ const Body = () => {
       
     </div>
 
-    {/* <Footer /> */}
+    <Footer />
     </div>
   );
 };

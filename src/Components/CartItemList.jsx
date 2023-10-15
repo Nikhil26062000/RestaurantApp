@@ -3,10 +3,13 @@ import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Logo from "../Images/Logo.png";
 import Button from "@mui/material/Button";
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
+
 import { removeItem,increaseQuantity,decreaseQuantity,deductPrice,addingPrice } from '../utils/cartSlice';
 
 const CartItemList = ({ele}) => {
+
+  const StoreItems = useSelector((store) => store.cart.items);
 
   const {name,imageId,price,defaultPrice,quantity} =ele;
 
@@ -19,8 +22,20 @@ const CartItemList = ({ele}) => {
    }
 
    const deleteQuantity = (name,price) =>{
-    dispatch(decreaseQuantity(name))
-    dispatch(deductPrice(price))
+
+    const item = StoreItems.find((item) => item.name === name);
+
+    if(item && item.quantity > 1){
+      dispatch(decreaseQuantity(name))
+    
+    
+      dispatch(deductPrice(price))
+    }
+
+    
+
+     
+    
    }
 
    const cancelItem = (name,price)=>{

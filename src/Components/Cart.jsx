@@ -90,9 +90,9 @@ const clearWholeCart = () => {
             <h4 className="sub">Subtotal</h4>
             <h6 className="discount">Discount </h6>
             <h3 className="totalPrice">Total</h3>
-            <h4 className="var1">{totalPrice/100}</h4>
-            <h5 className="var2">Rs.150</h5>
-            <h3 className="var3">{totalPrice/100}</h3>
+            <h4 className="var1">Rs.{totalPrice/100}</h4>
+            <h5 className="var2">0</h5>
+            <h3 className="var3">Rs.{totalPrice/100}</h3>
           </div>
 
           <Button className="placeOrder" variant="contained">

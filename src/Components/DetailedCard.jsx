@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import OffersCard from "./OffersCard";
 import LongListsCards from "./LongListsCards";
 import useMenuList from "../utils/useMenuList";
+import Shimmer from "./Shimmer";
 
 const DetailedCard = () => {
   const { resid } = useParams();
@@ -19,7 +20,7 @@ const DetailedCard = () => {
   const resInfo = useMenuList(resid);
 
   // if (resInfo === null) return <About />;
-  if (resInfo === null) return <h1>Loading Keep paitence 😄</h1>;
+  if (resInfo === null) return <Shimmer />;
 
   const { name, cuisines, avgRating, areaName, costForTwoMessage } =
     resInfo?.cards[0]?.card?.card?.info;
@@ -31,20 +32,20 @@ const DetailedCard = () => {
     <div>
       <div className="cardCont1">
         <div className="boxLeft">
-          <h1>{name}</h1>
+          <h1 className="text-3xl text-black font-black">{name}</h1>
           <h5>{cuisines}</h5>
           <h3>{areaName}</h3>
         </div>
         <div className="boxRight">
           <h3>{"⭐" + avgRating}</h3>
-          <h6>500k+</h6>
+          <h6 className="text-green-700 font-black">500k+</h6>
         </div>
       </div>
 
       <div className="cardCont2">
         <div className="info">
-          <h4>🕥 25min</h4>
-          <h3>💰 {costForTwoMessage}</h3>
+          <h4 className="text-red-700 font-semibold">🕥 25min</h4>
+          <h3 className="text-green-700 font-semibold">💰 {costForTwoMessage}</h3>
         </div>
 
         <div className="offerCards">

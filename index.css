@@ -360,6 +360,14 @@ h5 {
   
 
 }
+/* .innerItemListStyle{
+  background: #e7b51299 !important;
+} */
+
+.addbtnInnerList{
+  color: green !important;
+
+}
 .btncat:focus{
   background: rgb(106, 139, 237) !important;
   color: white !important;
@@ -536,7 +544,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 .paymentDetail{
   display: grid;
-  grid-template-columns:1fr 1fr 1fr;
+  grid-template-columns:.5fr .3fr 1fr;
   grid-template-rows: 1fr 1fr 1fr ;
   place-items: start;
   margin-top: 20px;
